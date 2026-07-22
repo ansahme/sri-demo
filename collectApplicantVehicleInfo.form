@@ -1,0 +1,103 @@
+{
+  "components": [
+    {
+      "label": "Applicant Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_applicantName",
+        "columns": null
+      },
+      "id": "Field_applicantName",
+      "key": "applicantName",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Annual Income",
+      "type": "number",
+      "layout": {
+        "row": "Row_annualIncome",
+        "columns": null
+      },
+      "id": "Field_annualIncome",
+      "key": "annualIncome",
+      "appearance": {
+        "prefixAdorner": "$"
+      },
+      "validate": {
+        "required": true,
+        "min": 0
+      }
+    },
+    {
+      "label": "Requested Loan Amount",
+      "type": "number",
+      "layout": {
+        "row": "Row_requestedLoanAmount",
+        "columns": null
+      },
+      "id": "Field_requestedLoanAmount",
+      "key": "requestedLoanAmount",
+      "appearance": {
+        "prefixAdorner": "$"
+      },
+      "validate": {
+        "required": true,
+        "min": 0
+      }
+    },
+    {
+      "label": "Vehicle Make",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_vehicleMake",
+        "columns": 6
+      },
+      "id": "Field_vehicleMake",
+      "key": "vehicleMake",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Vehicle Model",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_vehicleMake",
+        "columns": 6
+      },
+      "id": "Field_vehicleModel",
+      "key": "vehicleModel",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Vehicle Price",
+      "type": "number",
+      "layout": {
+        "row": "Row_vehiclePrice",
+        "columns": null
+      },
+      "id": "Field_vehiclePrice",
+      "key": "vehiclePrice",
+      "appearance": {
+        "prefixAdorner": "$"
+      },
+      "validate": {
+        "required": true,
+        "min": 0
+      }
+    }
+  ],
+  "type": "default",
+  "id": "collectApplicantVehicleInfo",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "cb33e5f"
+  },
+  "schemaVersion": 18
+}

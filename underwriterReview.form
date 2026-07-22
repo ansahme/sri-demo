@@ -1,0 +1,45 @@
+{
+  "components": [
+    {
+      "text": "## Underwriter Review\n\n**Applicant:** {{applicantName}}\n\n**Vehicle:** {{vehicleMake}} {{vehicleModel}} (${{vehiclePrice}})\n\n**Requested Loan Amount:** ${{requestedLoanAmount}}\n\n**Annual Income:** ${{annualIncome}}\n\n**Credit Score:** {{creditScore}}\n\n**Debt-to-Income Ratio:** {{debtToIncomeRatio}}",
+      "type": "text",
+      "layout": {
+        "row": "Row_summary",
+        "columns": null
+      },
+      "id": "Field_summary"
+    },
+    {
+      "label": "Approved",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_approved",
+        "columns": null
+      },
+      "id": "Field_approved",
+      "key": "approved",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Underwriter Comments",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_comments",
+        "columns": null
+      },
+      "id": "Field_underwriterComments",
+      "key": "underwriterComments"
+    }
+  ],
+  "type": "default",
+  "id": "underwriterReview",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "cb33e5f"
+  },
+  "schemaVersion": 18
+}

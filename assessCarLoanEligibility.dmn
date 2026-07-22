@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_assessCarLoanEligibility" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="cb33e5f" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.6.0">
+  <decision id="assessCarLoanEligibility" name="Assess Car Loan Eligibility">
+    <decisionTable id="DecisionTable_assessCarLoanEligibility" hitPolicy="FIRST">
+      <input id="Input_CreditScore" label="Credit Score">
+        <inputExpression id="InputExpression_CreditScore" typeRef="number">
+          <text>creditScore</text>
+        </inputExpression>
+      </input>
+      <input id="Input_AnnualIncome" label="Annual Income">
+        <inputExpression id="InputExpression_AnnualIncome" typeRef="number">
+          <text>annualIncome</text>
+        </inputExpression>
+      </input>
+      <input id="Input_RequestedLoanAmount" label="Requested Loan Amount">
+        <inputExpression id="InputExpression_RequestedLoanAmount" typeRef="number">
+          <text>requestedLoanAmount</text>
+        </inputExpression>
+      </input>
+      <input id="Input_DebtToIncomeRatio" label="Debt-to-Income Ratio">
+        <inputExpression id="InputExpression_DebtToIncomeRatio" typeRef="number">
+          <text>debtToIncomeRatio</text>
+        </inputExpression>
+      </input>
+      <output id="Output_Eligible" label="Eligible" name="eligible" typeRef="boolean" />
+      <output id="Output_Reason" label="Reason" name="reason" typeRef="string" />
+      <rule id="Rule_CreditScoreTooLow">
+        <inputEntry id="InputEntry_1_1">
+          <text>&lt; 580</text>
+        </inputEntry>
+        <inputEntry id="InputEntry_1_2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="InputEntry_1_3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="InputEntry_1_4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="OutputEntry_1_1">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="OutputEntry_1_2">
+          <text>"Credit score below minimum threshold of 580"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_DebtToIncomeTooHigh">
+        <inputEntry id="InputEntry_2_1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="InputEntry_2_2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="InputEntry_2_3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="InputEntry_2_4">
+          <text>&gt; 0.45</text>
+        </inputEntry>
+        <outputEntry id="OutputEntry_2_1">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="OutputEntry_2_2">
+          <text>"Debt-to-income ratio exceeds maximum threshold of 45%"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_LoanAmountTooHigh">
+        <inputEntry id="InputEntry_3_1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="InputEntry_3_2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="InputEntry_3_3">
+          <text>&gt; 75000</text>
+        </inputEntry>
+        <inputEntry id="InputEntry_3_4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="OutputEntry_3_1">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="OutputEntry_3_2">
+          <text>"Requested loan amount exceeds maximum of $75,000"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_IncomeTooLow">
+        <inputEntry id="InputEntry_4_1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="InputEntry_4_2">
+          <text>&lt; 25000</text>
+        </inputEntry>
+        <inputEntry id="InputEntry_4_3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="InputEntry_4_4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="OutputEntry_4_1">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="OutputEntry_4_2">
+          <text>"Annual income below minimum threshold of $25,000"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_Eligible">
+        <inputEntry id="InputEntry_5_1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="InputEntry_5_2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="InputEntry_5_3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="InputEntry_5_4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="OutputEntry_5_1">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="OutputEntry_5_2">
+          <text>"Applicant meets all eligibility criteria"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_assessCarLoanEligibility">
+      <dmndi:DMNShape id="DMNShape_assessCarLoanEligibility" dmnElementRef="assessCarLoanEligibility">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

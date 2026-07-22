@@ -1,0 +1,35 @@
+{
+  "components": [
+    {
+      "text": "## Sign Loan Agreement\n\nBy signing below, **{{applicantName}}** agrees to the terms of the loan for the {{vehicleMake}} {{vehicleModel}} in the amount of ${{requestedLoanAmount}}.",
+      "type": "text",
+      "layout": {
+        "row": "Row_summary",
+        "columns": null
+      },
+      "id": "Field_summary"
+    },
+    {
+      "label": "Signature (type full name to sign)",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_signature",
+        "columns": null
+      },
+      "id": "Field_signatureName",
+      "key": "signatureName",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "signLoanAgreement",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "cb33e5f"
+  },
+  "schemaVersion": 18
+}
